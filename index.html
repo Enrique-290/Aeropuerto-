@@ -32,12 +32,20 @@
           Cargar Excel (.xlsx) de la salida
         </label>
         <input type="file" id="file-input" accept=".xlsx,.xls" />
+        <small class="hint">
+          Usa tu archivo <strong>SALIDAS 10.xlsx</strong> con columnas:
+          FOLIO, NOMBRE, PUESTO, HOTEL, AEROLINEA, HORARIO.
+        </small>
       </div>
     </header>
 
     <section class="controls">
-      <input id="search-input" type="search" class="search-input"
-      placeholder="Buscar por nombre, folio, hotel, aerolínea o puesto..." />
+      <input
+        id="search-input"
+        type="search"
+        class="search-input"
+        placeholder="Buscar por nombre, folio, hotel, aerolínea o puesto..."
+      />
 
       <div class="filters-row">
         <div class="filter-group">
@@ -58,15 +66,21 @@
     </section>
 
     <section class="list-container">
-      <ul id="passengers-list" class="passengers-list"></ul>
+      <ul id="passengers-list" class="passengers-list">
+      </ul>
     </section>
 
     <footer class="footer-actions">
-      <button id="show-missing-btn" class="primary-btn">Ver solo faltantes</button>
-      <button id="reset-btn" class="secondary-btn">Reiniciar lista</button>
+      <button id="show-missing-btn" class="primary-btn">
+        Ver solo faltantes
+      </button>
+      <button id="reset-btn" class="secondary-btn">
+        Reiniciar lista
+      </button>
     </footer>
   </div>
 
+  <!-- Librería para leer Excel en el navegador -->
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="app.js"></script>
 </body>
