@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Control de Abordaje - Salida 10</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Control de Abordaje – Salida 10</h1>
+      <p class="subtitle">Carga el Excel, pasa lista y asegúrate que todos se suban al transporte.</p>
+
+      <div class="summary">
+        <div class="summary-item">
+          <span class="label">Total</span>
+          <span id="total-count" class="value">0</span>
+        </div>
+        <div class="summary-item">
+          <span class="label">Abordaron</span>
+          <span id="boarded-count" class="value ok">0</span>
+        </div>
+        <div class="summary-item">
+          <span class="label">Faltan</span>
+          <span id="missing-count" class="value alert">0</span>
+        </div>
+      </div>
+
+      <div class="file-loader">
+        <label for="file-input" class="file-label">
+          Cargar Excel (.xlsx) de la salida
+        </label>
+        <input type="file" id="file-input" accept=".xlsx,.xls" />
+      </div>
+    </header>
+
+    <section class="controls">
+      <input id="search-input" type="search" class="search-input"
+      placeholder="Buscar por nombre, folio, hotel, aerolínea o puesto..." />
+
+      <div class="filters-row">
+        <div class="filter-group">
+          <button class="chip active" data-filter-status="all">Todos</button>
+          <button class="chip" data-filter-status="boarded">Abordaron</button>
+          <button class="chip" data-filter-status="pending">Faltantes</button>
+        </div>
+
+        <div class="filter-group">
+          <select id="hotel-filter" class="select-filter">
+            <option value="">Todos los hoteles</option>
+          </select>
+          <select id="airline-filter" class="select-filter">
+            <option value="">Todas las aerolíneas</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="list-container">
+      <ul id="passengers-list" class="passengers-list"></ul>
+    </section>
+
+    <footer class="footer-actions">
+      <button id="show-missing-btn" class="primary-btn">Ver solo faltantes</button>
+      <button id="reset-btn" class="secondary-btn">Reiniciar lista</button>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
